@@ -8,7 +8,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={generalSans.variable}>
-      <body>{children}</body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }

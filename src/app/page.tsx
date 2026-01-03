@@ -5,22 +5,25 @@ const navLinks = ["How it Works", "Pricing", "Use Case", "FAQ"];
 export default function Home() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-gradient-to-b from-[#EAF4FF] via-[#EAF4FF] to-[#D8E9FF] text-[#1D2026]">
-      <header className="relative z-30 mx-auto mt-8 flex w-[min(100%-2rem,1040px)] items-center justify-between rounded-full bg-white/90 px-6 py-3 shadow-[0_14px_30px_rgba(15,23,42,0.08)] backdrop-blur">
+      <header className="relative z-30 mx-auto mt-[40px] flex h-[81px] w-[1200px] items-center justify-between rounded-[200px] bg-white py-[20px] pl-[24px] pr-[20px] shadow-[0_1px_4px_rgba(12,12,13,0.05)]">
         <div className="flex items-center gap-2">
-          <Image src="/icon-coup.svg" alt="Coup" width={90} height={28} />
+          <Image src="/icon-coup.svg" alt="Coup" width={107} height={34} />
         </div>
-        <nav className="hidden items-center gap-8 text-sm font-medium text-[#7B8694] md:flex">
-          {navLinks.map((item) => (
-            <a
-              key={item}
-              href="#"
-              className="transition-colors hover:text-[#1D2026]"
-            >
-              {item}
-            </a>
-          ))}
+        <nav className="hidden md:flex">
+          <ul className="flex items-center gap-4 text-[16px] font-[500] text-[#8C97A8]">
+            {navLinks.map((item) => (
+              <li key={item} className="flex items-center gap-2 px-3 py-2">
+                <a
+                  href="#"
+                  className="leading-[22px] transition-colors hover:text-[#1D2026]"
+                >
+                  {item}
+                </a>
+              </li>
+            ))}
+          </ul>
         </nav>
-        <button className="rounded-full bg-[#007AFF] px-4 py-2 text-sm font-semibold text-white shadow-[0_8px_16px_rgba(0,122,255,0.3)]">
+        <button className="inline-flex items-center gap-[6.98px] rounded-[43.62px] bg-[#007AFF] px-[18px] py-[11px] text-[16px] font-[500] leading-[19px] tracking-tight2 text-white">
           Contact Sales
         </button>
       </header>
