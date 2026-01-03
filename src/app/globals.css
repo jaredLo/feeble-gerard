@@ -4,6 +4,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --ui-scale: 1.1;
 }
 
 @theme inline {
@@ -22,4 +23,22 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-general-sans), ui-sans-serif, system-ui;
+}
+
+html {
+  font-size: calc(min(100vw, 1920px) / 192 * var(--ui-scale));
+}
+
+.design-scale {
+  --scale: 1;
+  height: calc(108rem * var(--scale));
+  width: calc(192rem * var(--scale));
+}
+
+.design-frame {
+  height: 108rem;
+  position: relative;
+  transform: scale(var(--scale));
+  transform-origin: top left;
+  width: 192rem;
 }
