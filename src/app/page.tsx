@@ -28,13 +28,13 @@ export default function Home() {
         </button>
       </header>
 
-      <main className="relative z-30 mx-auto flex w-[min(100%-2rem,880px)] flex-col items-center pb-[420px] pt-16 text-center sm:pt-24">
-        <div className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-semibold text-[#007AFF] shadow-[0_6px_16px_rgba(15,23,42,0.08)]">
+      <main className="relative z-30 mx-auto flex w-[min(100%-2rem,880px)] flex-col items-center pb-[420px] pt-[64px] text-center sm:pt-[64px]">
+        <div className="inline-flex h-[28px] items-center gap-2 rounded-[200px] bg-white px-2 py-1 text-[16px] font-[500] leading-[1.2] tracking-tight2 text-[#006FE8] shadow-[0_1px_4px_rgba(12,12,13,0.05)]">
           <Image src="/icon-ellipsis.svg" alt="" width={32} height={17} />
           <span>#1 iMessage Automation Tool</span>
         </div>
 
-        <h1 className="mt-6 text-[40px] font-bold leading-[1.2] tracking-tight2 text-[#1D2026] sm:text-[52px] lg:text-[64px]">
+        <h1 className="mt-[41px] text-[40px] font-bold leading-[1.2] tracking-tight2 text-[#1D2026] sm:text-[52px] lg:text-[64px]">
           <span className="text-[#007AFF]">iMessage</span> Automation
           <br />
           for Teams and AI
@@ -42,18 +42,28 @@ export default function Home() {
           Workflows.
         </h1>
 
-        <p className="mt-4 max-w-[560px] text-sm text-[#1D2026]/75 sm:text-base">
+        <p className="mt-[43px] max-w-[560px] text-[18px] font-[400] leading-[1.3] tracking-tight2 text-[#1D2026]/75">
           Coup lets you, your team, or AI workflows send iMessages directly from
           your phone number, running securely on your Mac or Mac Mini.
         </p>
 
-        <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row">
-          <button className="rounded-full bg-[#007AFF] px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_16px_rgba(0,122,255,0.3)]">
+        <div className="mt-[53px] flex w-[414px] flex-col items-center gap-[12px] sm:flex-row">
+          <button className="rounded-[50px] bg-[#007AFF] px-[20px] py-[12px] text-[18px] font-[500] leading-[1.2] tracking-tight2 text-white shadow-[0_8px_16px_rgba(0,122,255,0.3)]">
             Get Started
           </button>
-          <button className="inline-flex items-center gap-2 rounded-full border border-[#1D2026]/20 bg-white px-5 py-3 text-sm font-semibold text-[#1D2026] shadow-[0_6px_16px_rgba(15,23,42,0.06)]">
-            <Image src="/icon-apple.svg" alt="" width={16} height={18} />
-            Download the Mac app
+          <button className="inline-flex w-[266px] items-center justify-center gap-[12px] rounded-[50px] border-[0.7px] border-[#6C788F] bg-white px-[20px] py-[12px] text-[18px] font-[500] leading-[1.2] tracking-tight2 text-[#1D2026] shadow-[0_6px_16px_rgba(15,23,42,0.06)]">
+            <Image
+              src="/icon-apple.svg"
+              alt=""
+              width={18}
+              height={22}
+              className="h-[22px] w-[18.43px] shrink-0"
+            />
+            <span
+              className="inline-block h-[18px] w-[0.5px] shrink-0 bg-[#6C788F]"
+              aria-hidden="true"
+            />
+            <span className="whitespace-nowrap">Download the Mac app</span>
           </button>
         </div>
       </main>
@@ -151,9 +161,11 @@ export default function Home() {
         />
       </div>
 
-      <div className="pointer-events-none absolute bottom-[220px] left-1/2 z-30 flex -translate-x-1/2 flex-col items-center gap-2 text-xs text-[#1D2026]">
-        <span>Scroll to learn more</span>
-        <Image src="/arrow-down.svg" alt="" width={20} height={20} />
+      <div className="pointer-events-none absolute bottom-[27px] left-1/2 z-30 flex w-[645px] -translate-x-1/2 flex-col items-center text-center text-[18px] font-[500] leading-[1.3] tracking-tight2 text-[#1D2026]">
+        <span className="h-[23px]">Scroll to learn more</span>
+        <div className="mt-[17px]">
+          <Image src="/arrow-down.svg" alt="" width={32} height={32} />
+        </div>
       </div>
     </div>
   );
