@@ -8,10 +8,12 @@ const navLinks = ["How it Works", "Pricing", "Use Case", "FAQ"];
 const riseDuration = 1.2;
 const flyDelay = riseDuration + 0.8;
 const fadeInDuration = "0.45s";
+const riseEase = [0, 0.59, 0.44, 0.99] as const;
+const flyEase = [0.73, 0, 0.8, 0.83] as const;
 const riseMotion = {
   initial: { opacity: 0, y: "60vh" },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: riseDuration, ease: [0, 0.59, 0.44, 0.99] },
+  transition: { duration: riseDuration, ease: riseEase },
 };
 const riseFadeOutMotion = {
   initial: { opacity: 1, y: "60vh" },
@@ -55,7 +57,9 @@ export default function Home() {
               </ul>
             </nav>
             <Button variant="primary" size="nav" hoverEffect="slide">
-              Contact Sales
+              <span className="relative -top-[-0.05rem] left-[-0.05rem]">
+                Contact Sales
+              </span>
             </Button>
           </header>
 
@@ -80,7 +84,7 @@ export default function Home() {
                 <br />
                 for Teams and AI
                 <br />
-                <span className="inline-block mr-[0.02em]">Workf</span>
+                <span className="inline-block mr-[0.03em]">Workf</span>
                 <span className="inline-block translate-x-[-0.01em]">lows.</span>
               </h1>
 
@@ -96,10 +100,10 @@ export default function Home() {
             </div>
 
             <div className="flex w-[41.4rem] items-center justify-center gap-[1.2rem]">
-              <Button variant="primary" size="hero">
+              <Button variant="primary" size="hero" className="pt-[1.3rem]">
                 Get Started
               </Button>
-              <Button variant="outline" size="hero" className="py-[1.05rem]">
+              <Button variant="outline" size="hero" className="pb-[1rem]">
                 <Image
                   src="/icon-apple.svg"
                   alt=""
@@ -178,7 +182,7 @@ export default function Home() {
               animate: { x: "236.6rem", y: "-50rem" },
               transition: {
                 duration: 3.5,
-                ease: [0.73, 0, 0.8, 0.83],
+                ease: flyEase,
                 delay: flyDelay,
               },
             }}
@@ -193,7 +197,7 @@ export default function Home() {
               animate: { x: "-236.6rem", y: "-50rem" },
               transition: {
                 duration: 3.5,
-                ease: [0.73, 0, 0.8, 0.83],
+                ease: flyEase,
                 delay: flyDelay,
               },
             }}
