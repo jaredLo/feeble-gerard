@@ -1,13 +1,17 @@
+import type { CSSProperties } from "react";
 import Image from "next/image";
 import Button from "../components/Button";
 import BgBird from "../components/BgBird";
 import CloudLayer from "../components/CloudLayer";
 import DecorBird from "../components/DecorBird";
 const navLinks = ["How it Works", "Pricing", "Use Case", "FAQ"];
+const riseDuration = 1.2;
+const flyDelay = riseDuration + 0.8;
+const fadeInDuration = "0.45s";
 const riseMotion = {
   initial: { opacity: 0, y: "60vh" },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 1.2, ease: "easeInOut" },
+  transition: { duration: riseDuration, ease: [0, 0.59, 0.44, 0.99] },
 };
 const riseFadeOutMotion = {
   initial: { opacity: 1, y: "60vh" },
@@ -17,7 +21,10 @@ const riseFadeOutMotion = {
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-b from-[#EAF4FF] via-[#EAF4FF] to-[#D8E9FF] text-[#1D2026]">
+    <div
+      className="relative min-h-screen overflow-hidden bg-gradient-to-b from-[#EAF4FF] via-[#EAF4FF] to-[#D8E9FF] text-[#1D2026]"
+      style={{ "--fade-in-duration": fadeInDuration } as CSSProperties}
+    >
       <div className="relative mx-auto h-[108rem] w-[192rem]">
         <div className="absolute left-[12rem] top-[4rem] flex h-[59.2rem] w-[168rem] flex-col items-center gap-[6.4rem]">
           <header className="fade-in relative z-30 flex h-[8.1rem] w-[120rem] items-center justify-between rounded-[20rem] bg-white py-[2rem] pl-[2.4rem] pr-[2rem] shadow-[0_0.1rem_0.4rem_rgba(12,12,13,0.05)]">
@@ -115,7 +122,7 @@ export default function Home() {
               className="absolute left-[17.8rem] top-[25.1rem] h-[1.4rem] w-[4.3rem]"
               motionProps={riseMotion}
             />
-            <BgBird className="absolute left-[37.5rem] top-[28.9rem] h-[1.4rem] w-[4.3rem]" />
+            <BgBird className="absolute left-[37.5rem] top-[28.9rem] h-[1.4rem] w-[4.3rem] fade-in" />
             <BgBird
               className="absolute left-[37.5rem] top-[28.9rem] h-[1.4rem] w-[4.3rem]"
               motionProps={riseFadeOutMotion}
@@ -124,7 +131,7 @@ export default function Home() {
               className="absolute left-[128.6rem] top-[26.5rem] h-[1.4rem] w-[4.3rem]"
               motionProps={riseMotion}
             />
-            <BgBird className="absolute left-[132.6rem] top-[42.5rem] h-[1.4rem] w-[4.3rem]" />
+            <BgBird className="absolute left-[132.6rem] top-[42.5rem] h-[1.4rem] w-[4.3rem] fade-in" />
             <BgBird
               className="absolute left-[132.6rem] top-[42.5rem] h-[1.4rem] w-[4.3rem]"
               motionProps={riseFadeOutMotion}
@@ -170,9 +177,9 @@ export default function Home() {
               initial: { x: 0, y: 0 },
               animate: { x: "236.6rem", y: "-50rem" },
               transition: {
-                duration: 3.2,
-                ease: "easeIn",
-                delay: 2.2,
+                duration: 3.5,
+                ease: [0.73, 0, 0.8, 0.83],
+                delay: flyDelay,
               },
             }}
           />
@@ -185,9 +192,9 @@ export default function Home() {
               initial: { x: 0, y: 0 },
               animate: { x: "-236.6rem", y: "-50rem" },
               transition: {
-                duration: 3.3,
-                ease: "easeIn",
-                delay: 2.5,
+                duration: 3.5,
+                ease: [0.73, 0, 0.8, 0.83],
+                delay: flyDelay,
               },
             }}
           />

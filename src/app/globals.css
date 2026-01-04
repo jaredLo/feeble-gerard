@@ -35,7 +35,7 @@ body {
 }
 
 .fade-in {
-  animation: fade-in 0.3s ease-in both;
+  animation: fade-in var(--fade-in-duration, 0.3s) ease-in both;
 }
 
 html {
