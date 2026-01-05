@@ -20,7 +20,7 @@ export default function DecorBird({
   motionProps,
 }: DecorBirdProps) {
   return (
-    <motion.div className={className} {...motionProps}>
+    <motion.div className={className} {...(motionProps ?? {})}>
       <Image
         src={src}
         alt=""

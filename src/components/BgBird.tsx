@@ -6,30 +6,15 @@ import { motion } from "framer-motion";
 
 type BgBirdProps = {
   className?: string;
-  animateFromBottom?: boolean;
-  fadeOutOnArrival?: boolean;
-  delay?: number;
   motionProps?: MotionProps;
 };
 
 export default function BgBird({
   className,
-  animateFromBottom = false,
-  fadeOutOnArrival = false,
-  delay = 0,
   motionProps,
 }: BgBirdProps) {
-  const easeInOut = "easeInOut" as const;
-  const riseMotionProps: MotionProps = {
-    initial: { opacity: fadeOutOnArrival ? 1 : 0, y: "60vh" },
-    animate: { opacity: fadeOutOnArrival ? 0 : 1, y: 0 },
-    transition: { duration: 1.2, ease: easeInOut, delay },
-  };
-  const resolvedMotionProps: MotionProps =
-    motionProps ?? (animateFromBottom ? riseMotionProps : {});
-
   return (
-    <motion.div className={className} {...resolvedMotionProps}>
+    <motion.div className={className} {...(motionProps ?? {})}>
       <Image
         src="/bg-bird.svg"
         alt=""
