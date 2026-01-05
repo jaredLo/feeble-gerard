@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Button from "../components/Button";
 import BgBird from "../components/BgBird";
@@ -16,10 +17,27 @@ import {
   riseMotion,
 } from "./landingData";
 
+const DESIGN_WIDTH = 3072; // 192rem at 16px base
+
 export default function Home() {
+  const heroRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const updateScale = () => {
+      if (!heroRef.current) return;
+      const viewportWidth = document.documentElement.clientWidth;
+      const scale = Math.min(1, viewportWidth / DESIGN_WIDTH);
+      heroRef.current.style.setProperty("--hero-scale", String(scale));
+    };
+
+    updateScale();
+    window.addEventListener("resize", updateScale);
+    return () => window.removeEventListener("resize", updateScale);
+  }, []);
+
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-[#EAF4FF] via-[#EAF4FF] to-[#D8E9FF] text-[#1D2026]">
-      <div className="hero-scale">
+      <div ref={heroRef} className="hero-scale">
         <div className="hero-frame">
           <div className="absolute left-[12rem] top-[4rem] flex h-[59.2rem] w-[168rem] flex-col items-center gap-[6.4rem]">
             <motion.header

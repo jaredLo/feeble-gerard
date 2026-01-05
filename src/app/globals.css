@@ -28,11 +28,12 @@ body {
 }
 
 .hero-scale {
-  --hero-scale: min(1, calc(100vw / 192rem));
-  height: calc(108rem * var(--hero-scale));
+  --hero-scale: 1;
+  aspect-ratio: 192 / 108;
   margin: 0 auto;
   position: relative;
   width: calc(192rem * var(--hero-scale));
+  max-width: 100%;
   overflow: hidden;
 }
 
