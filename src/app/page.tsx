@@ -173,6 +173,13 @@ export default function Home() {
             ))}
           </div>
 
+          {/* Fog decoration - top left blur */}
+          <motion.div
+            className="pointer-events-none absolute left-[-5.78rem] top-[-14.3rem] z-10 h-[27.61rem] w-[29.45rem] rounded-full bg-white/70 backdrop-blur-[121px]"
+            aria-hidden="true"
+            {...fadeInMotion}
+          />
+
           <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[56rem] opacity-10">
             {cloudLayers.map((layer) => (
               <CloudLayer
