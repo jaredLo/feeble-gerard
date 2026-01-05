@@ -175,7 +175,7 @@ export default function Home() {
 
           {/* Fog decoration - top left blur */}
           <motion.div
-            className="pointer-events-none absolute left-[-5.78rem] top-[-14.3rem] z-10 h-[27.61rem] w-[29.45rem] rounded-full bg-white/70 backdrop-blur-[121px]"
+            className="pointer-events-none absolute left-[-5.78rem] top-[-14.3rem] z-10 h-[27.61rem] w-[29.45rem] rounded-full bg-white/70 blur-[121px]"
             aria-hidden="true"
             {...fadeInMotion}
           />
