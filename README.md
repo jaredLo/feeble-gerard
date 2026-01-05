@@ -1,5 +1,8 @@
 # feeble-gerard
 
+https://feeble-gerard.vercel.app/
+
+
 Landing page built with the Next.js App Router.
 
 ## Tech Stack
@@ -11,7 +14,7 @@ Landing page built with the Next.js App Router.
 
 ## Implementation Notes / Assumptions
 - Chose **Next.js (App Router)** because the role specifies **React/Next.js**, and it provides a clean, production-like baseline (routing/layout primitives, asset handling, and easy deployment) even for a single-page assignment.
-- Used **`next/font/local`** to self-host General Sans for consistent renderingg.
+- Used **`next/font/local`** to self-host General Sans for consistent rendering.
 - "Pixel-perfect" was interpreted as **matching the Figma output** (including minor optical offsets present in the design). Minor kerning differences may occur between Figma and browser text rendering (eg. "Workflows", the "f" and "lows" spacing in Figma are oddly spaced), typography was matched using the provided font files and letter-spacing.
 - Added **`prefers-reduced-motion`** handling for looping/ambient animations.
 - If the product needs true adaptive behavior (e.g., better accessibility on smaller viewports), we can replace the scale with breakpoint-based typography/spacing and responsive positioning; the current approach just shipped the requested pixel-perfect look quickly.
