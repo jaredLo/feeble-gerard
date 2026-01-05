@@ -20,7 +20,7 @@
 }
 
 body {
-  background: var(--background);
+  background: linear-gradient(#eaf4ff, #d8e9ff);
   color: var(--foreground);
   font-family: var(--font-general-sans), ui-sans-serif, system-ui;
   -webkit-user-select: none;
@@ -28,17 +28,32 @@ body {
 }
 
 .hero-scale {
-  --hero-scale: calc(min(100vw, 1920px) / 3072 * var(--ui-scale));
+  --hero-scale: min(1, calc(100vw / 192rem));
   height: calc(108rem * var(--hero-scale));
   margin: 0 auto;
   position: relative;
   width: calc(192rem * var(--hero-scale));
+  overflow: hidden;
 }
 
 .hero-frame {
   height: 108rem;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 192rem;
   transform: scale(var(--hero-scale));
   transform-origin: top left;
-  width: 192rem;
+}
+
+html {
+  font-size: 16px;
+  background: #d8e9ff; /* matches gradient end — prevents white flash on overscroll */
+  overscroll-behavior: none;
+}
+
+body {
+  min-height: 100%;
+  overflow-x: hidden;
+  overscroll-behavior: none;
 }

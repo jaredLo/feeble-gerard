@@ -18,7 +18,7 @@ import {
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-gradient-to-b from-[#EAF4FF] via-[#EAF4FF] to-[#D8E9FF] text-[#1D2026]">
+    <div className="relative min-h-screen bg-gradient-to-b from-[#EAF4FF] via-[#EAF4FF] to-[#D8E9FF] text-[#1D2026]">
       <div className="hero-scale">
         <div className="hero-frame">
           <div className="absolute left-[12rem] top-[4rem] flex h-[59.2rem] w-[168rem] flex-col items-center gap-[6.4rem]">
