@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# feeble-gerard
 
-## Getting Started
+Landing page built with the Next.js App Router.
 
-First, run the development server:
-node 20
+## Tech Stack
+- Next.js (App Router) + React
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- `next/font/local` for General Sans
+
+## Implementation Notes / Assumptions
+- Chose **Next.js (App Router)** because the role specifies **React/Next.js**, and it provides a clean, production-like baseline (routing/layout primitives, asset handling, and easy deployment) even for a single-page assignment.
+- Used **`next/font/local`** to self-host General Sans for consistent renderingg.
+- "Pixel-perfect" was interpreted as **matching the Figma output** (including minor optical offsets present in the design). Minor kerning differences may occur between Figma and browser text rendering (eg. "Workflows", the "f" and "lows" spacing in Figma are oddly spaced), typography was matched using the provided font files and letter-spacing.
+- Added **`prefers-reduced-motion`** handling for looping/ambient animations.
+
+## Project Structure
+- `src/app` — App Router layout and route files (`page.tsx` is the main landing page)
+- `src/components` — reusable UI and motion components (Button, BgBird, CloudLayer, DecorBird)
+- `src/assets/fonts` — local font files (General Sans)
+- `public` — static assets (SVGs for clouds, birds, icons)
+- `src/app/globals.css` — global styles and scaling rules
+
+## Run Locally
+Prereqs: Node v20
+
 ```bash
+# node.js 20 recommended
+npm install
+npm run lint
+npm run build
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open http://localhost:3000.

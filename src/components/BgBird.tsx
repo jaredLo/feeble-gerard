@@ -19,15 +19,14 @@ export default function BgBird({
   delay = 0,
   motionProps,
 }: BgBirdProps) {
-  const fallbackMotionProps = animateFromBottom
-    ? {
-        initial: { opacity: fadeOutOnArrival ? 1 : 0, y: "60vh" },
-        animate: { opacity: fadeOutOnArrival ? 0 : 1, y: 0 },
-        transition: { duration: 1.2, ease: "easeInOut", delay },
-      }
-    : {};
-
-  const resolvedMotionProps = motionProps ?? fallbackMotionProps;
+  const easeInOut = "easeInOut" as const;
+  const riseMotionProps: MotionProps = {
+    initial: { opacity: fadeOutOnArrival ? 1 : 0, y: "60vh" },
+    animate: { opacity: fadeOutOnArrival ? 0 : 1, y: 0 },
+    transition: { duration: 1.2, ease: easeInOut, delay },
+  };
+  const resolvedMotionProps: MotionProps =
+    motionProps ?? (animateFromBottom ? riseMotionProps : {});
 
   return (
     <motion.div className={className} {...resolvedMotionProps}>
